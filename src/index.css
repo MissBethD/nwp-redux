@@ -1,0 +1,197 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans");
+@import url("https://fonts.googleapis.com/css?family=Gentium+Book+Basic");
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  font-family: "Open Sans", sans-serif;
+  font-size: 10px;
+}
+
+header {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+header .gradient {
+  box-shadow: inset 0px -10px 65px -30px rgba(67, 0, 109, 0.63);
+}
+
+header h1 {
+  color: #fff;
+  font-size: 3.2em;
+  text-align: center;
+}
+/* 
+    Some really pretty gradients here:
+    https://webgradients.com/
+*/
+
+.gradient::before {
+  opacity: 0.1;
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  transform-origin: 100%;
+  background-image: linear-gradient(to top, #9795f0 0%, #fbc8d4 100%);
+  position: absolute;
+  animation-name: tilt;
+  animation-duration: 700ms;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-in-out;
+  z-index: 1;
+}
+
+header.gradient::after {
+  opacity: 0.1;
+  content: "";
+  display: block;
+  width: 100%;
+  height: 60vh;
+  overflow: hidden;
+  transform-origin: top;
+  background-image: linear-gradient(
+    to top,
+    rgba(151, 149, 240, 0.4) 0%,
+    rgba(251, 200, 212, 0.4) 100%
+  );
+  position: absolute;
+  animation-name: tilt-alt;
+  animation-delay: 200ms;
+  animation-duration: 400ms;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-in-out;
+  z-index: 2;
+}
+
+.gradient .inner {
+  z-index: 10;
+  position: relative;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 10vh 10vw;
+}
+
+.gradient {
+  position: relative;
+  height: 100vh;
+}
+
+#masthead {
+  text-align: center;
+  padding: 20px;
+  min-height: 81vh;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#masthead .title {
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.35);
+}
+
+.button {
+  background: #9795f0;
+  border-radius: 0.6em;
+  text-decoration: none;
+  color: #fff;
+  padding: 0.9em 1.8em;
+  margin: 1.8em 0.9em;
+  font-size: 1.8em;
+  display: inline-block;
+  border: 1px solid #716fbb;
+  transition: box-shadow 300ms ease, transform 300ms ease, background 300ms ease,
+    border 300ms ease;
+}
+
+.button:hover {
+  background: #6b6988;
+  box-shadow: 0px 4px 20px 5px rgba(0, 0, 0, 0.32);
+  border: 1px solid rgba(0, 0, 0, 0.32);
+  transform: scale(1.1);
+}
+
+span.counter {
+  background: #eceeee;
+  border-radius: 0.6em;
+  text-decoration: none;
+  color: #fff;
+  padding: 0.9em 1.8em;
+  margin: 1.8em 0.9em;
+  font-size: 1.8em;
+  display: inline-block;
+  border: 1px solid #716fbb;
+  color: #9695f0;
+  font-weight: bold;
+}
+
+.is-white::before {
+  background-image: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
+}
+
+.is-light-gray::before {
+  background-image: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+}
+
+.has-text-centered {
+  text-align: center;
+}
+
+nav {
+  text-align: center;
+  position: relative;
+  z-index: 10;
+}
+
+nav a {
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #6b6988;
+  margin: 0 20px;
+}
+
+p {
+  font-size: 1.6em;
+}
+
+@keyframes tilt {
+  0% {
+    opacity: 0.1;
+    transform: skewY(0deg);
+  }
+  50% {
+    transform: skewY(1deg);
+  }
+  100% {
+    opacity: 1;
+    transform: skewY(10deg);
+  }
+}
+
+@keyframes tilt-alt {
+  0% {
+    opacity: 0.1;
+    transform: skewY(0deg);
+  }
+  50% {
+    transform: skewY(-1deg);
+  }
+  100% {
+    opacity: 1;
+    transform: skewY(-10deg);
+  }
+}
